@@ -8,9 +8,19 @@
 	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
+	<name>servDepenFinanty</name>
+	<url>http://maven.apache.org</url>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+
+	<repositories>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+	</repositories>
 
 	<dependencies>
 		<dependency>
@@ -19,6 +29,8 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
+	
+		
 	</dependencies>
 	<build>
 		<finalName>servDepenFinanty</finalName>
