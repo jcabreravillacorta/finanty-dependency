@@ -177,7 +177,16 @@ public interface Utils {
 		}
 	}
 
-	 static HttpComponentsClientHttpRequestFactory getRequestFactory(RestTemplate restTemplate) {
+	static BigDecimal getDecimalNotNull(BigDecimal valor){
+		if (valor == null){
+			return BigDecimal.ZERO;
+		}
+
+		return valor;
+	}
+
+
+	static HttpComponentsClientHttpRequestFactory getRequestFactory(RestTemplate restTemplate) {
 		HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
 		try {
 			KeyStore clientStore = KeyStore.getInstance("PKCS12");
