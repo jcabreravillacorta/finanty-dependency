@@ -1,13 +1,14 @@
 package pe.finanty.servDepenFinanty;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.DateUtil;
 
 import java.text.SimpleDateFormat;
-
-public interface UtilsExcel {
+@Slf4j
+public class UtilsExcel {
 
     static String formatDateParam = "dd/MM/yyyy";
 

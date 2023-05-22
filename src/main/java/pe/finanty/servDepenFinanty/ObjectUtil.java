@@ -1,5 +1,6 @@
 package pe.finanty.servDepenFinanty;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.text.WordUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+@Slf4j
 public class ObjectUtil {
     private static final Logger logger = LoggerFactory.getLogger(ObjectUtil.class);
 
