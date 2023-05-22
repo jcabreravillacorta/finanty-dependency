@@ -7,10 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="finanty-ultimate" />
-        <module name="serv-depen-finanty" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="serv-depen-finanty" target="1.8" />
       <module name="servDepenFinanty" target="1.8" />
     </bytecodeTargetLevel>
   </component>
