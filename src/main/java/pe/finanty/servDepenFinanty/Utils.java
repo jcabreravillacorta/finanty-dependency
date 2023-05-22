@@ -1,6 +1,5 @@
 package pe.finanty.servDepenFinanty;
 
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
@@ -21,8 +20,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
-@Slf4j
-public class Utils {
+public interface Utils {
 
 	String TMP_DIR = OSValidator.isWindows() ? "c:\\tmp\\" : "/tmp/";
 
