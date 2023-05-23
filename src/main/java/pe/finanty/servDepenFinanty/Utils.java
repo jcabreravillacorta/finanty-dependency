@@ -187,30 +187,30 @@ public class Utils {
 	}
 
 
-	public static HttpComponentsClientHttpRequestFactory getRequestFactory(RestTemplate restTemplate) {
+	public static HttpComponentsClientHttpRequestFactory getRequestFactory(RestTemplate restTemplate, String urlP12, String passP12, String urlJks, String passJks) {
 		HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
 		try {
 			KeyStore clientStore = KeyStore.getInstance("PKCS12");
 
-			InputStream inputStream  =  new ClassPathResource("ssl/star_finanty_boot.p12").getInputStream();
+			InputStream inputStream  =  new ClassPathResource(urlP12).getInputStream();
 
 			System.out.println("inputStream --- >" + inputStream);
 
 			clientStore.load(inputStream,
-					"Finanty2023".toCharArray());
+					passP12.toCharArray());
 
 			KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
-			kmf.init(clientStore, "Finanty2023".toCharArray());
+			kmf.init(clientStore, passP12.toCharArray());
 			KeyManager[] keyManagers = kmf.getKeyManagers();
 
 			KeyStore trustStore = KeyStore.getInstance("JKS");
 
-			InputStream inputStream2  =new ClassPathResource("ssl/finanty-2023.jks").getInputStream();
+			InputStream inputStream2  =new ClassPathResource(urlJks).getInputStream();
 
 			System.out.println("inputStream2 --- >" + inputStream2);
 			trustStore.load(
 					inputStream2,
-					"Fin@nty2023".toCharArray());
+					passJks.toCharArray());
 
 			TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
 			tmf.init(trustStore);
