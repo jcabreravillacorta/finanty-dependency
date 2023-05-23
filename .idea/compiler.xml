@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="finanty-ultimate" />
         <module name="serv-depen-finanty" />
+        <module name="integrador" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -18,6 +19,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="finanty-ultimate" options="-parameters" />
+      <module name="integrador" options="-parameters" />
     </option>
   </component>
 </project>
