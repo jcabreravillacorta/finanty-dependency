@@ -1,21 +1,23 @@
 package pe.finanty.servDepenFinanty;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.DateUtil;
 
 import java.text.SimpleDateFormat;
-public interface UtilsExcel {
+@Slf4j
+public class UtilsExcel {
 
-    static String formatDateParam = "dd/MM/yyyy";
+    public static String formatDateParam = "dd/MM/yyyy";
 
      static String getDatoString(Cell cell){
 
         return getDatoString(cell, formatDateParam, null);
      }
 
-    static String getDatoString(Cell cell, String formatDate, CellType cellType){
+    public static String getDatoString(Cell cell, String formatDate, CellType cellType){
         DataFormatter formatter = new DataFormatter();
 
         if (cell == null) {

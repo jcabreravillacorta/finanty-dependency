@@ -1,5 +1,6 @@
 package pe.finanty.servDepenFinanty;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
@@ -19,12 +20,12 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 import java.util.function.Predicate;
-
-public interface Utils {
+@Slf4j
+public class Utils {
 
 	String TMP_DIR = OSValidator.isWindows() ? "c:\\tmp\\" : "/tmp/";
 
-	static List getListNotNull(List list) {
+	public static List getListNotNull(List list) {
 		if (list == null) {
 			return new ArrayList();
 		}
@@ -32,7 +33,7 @@ public interface Utils {
 	}
 
 
-	static BigDecimal recortarDecimalSinRedondeoMulti(BigDecimal a, BigDecimal b, Integer cantDecimales){
+	public static BigDecimal recortarDecimalSinRedondeoMulti(BigDecimal a, BigDecimal b, Integer cantDecimales){
 
 		double numero2 = a.doubleValue() * b.doubleValue();
 		String format = "#.";
@@ -45,7 +46,7 @@ public interface Utils {
 		return new BigDecimal(formato1.format(numero2));
 	}
 
-	static BigDecimal recortarDecimalSinRedondeoDiv(BigDecimal a, BigDecimal b, Integer cantDecimales){
+	public static BigDecimal recortarDecimalSinRedondeoDiv(BigDecimal a, BigDecimal b, Integer cantDecimales){
 
 		double numero2 = a.doubleValue() / b.doubleValue();
 		String format = "#.";
@@ -58,12 +59,12 @@ public interface Utils {
 		return new BigDecimal(formato1.format(numero2));
 	}
 
-	static <T> Predicate<T> distinctByKey(Function<? super T, ?> keyExtractor) {
+	public static <T> Predicate<T> distinctByKey(Function<? super T, ?> keyExtractor) {
 		Set<Object> seen = ConcurrentHashMap.newKeySet();
 		return t -> seen.add(keyExtractor.apply(t));
 	}
 
-	static Map convertListToMap(String attr, List items) {
+	public static Map convertListToMap(String attr, List items) {
 		Map map = new LinkedHashMap();
 		items.forEach((item) -> {
 			Object key = ObjectUtil.getParentTree(item, attr);
@@ -167,7 +168,7 @@ public interface Utils {
 		return inspector;
 	}
 
-	static boolean esNumerico(String value) {
+	public static boolean esNumerico(String value) {
 		try {
 			Double.parseDouble(value);
 			return true;
@@ -177,7 +178,7 @@ public interface Utils {
 		}
 	}
 
-	static BigDecimal getDecimalNotNull(BigDecimal valor){
+	public static BigDecimal getDecimalNotNull(BigDecimal valor){
 		if (valor == null){
 			return BigDecimal.ZERO;
 		}
@@ -186,7 +187,7 @@ public interface Utils {
 	}
 
 
-	static HttpComponentsClientHttpRequestFactory getRequestFactory(RestTemplate restTemplate) {
+	public static HttpComponentsClientHttpRequestFactory getRequestFactory(RestTemplate restTemplate) {
 		HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
 		try {
 			KeyStore clientStore = KeyStore.getInstance("PKCS12");
@@ -231,7 +232,7 @@ public interface Utils {
 		return requestFactory;
 	}
 
-	static String obtenerExcepcion(Exception e){
+	public static String obtenerExcepcion(Exception e){
 		String[] ss = ExceptionUtils.getRootCauseStackTrace(e);
 		String error = StringUtils.join(ss, ", ");
 		if (error != null && !error.isEmpty()) {
@@ -243,7 +244,7 @@ public interface Utils {
 		return error;
 	}
 
-	static List<List> paginarLista(List deudaDTOList, int limite){
+	public static List<List> paginarLista(List deudaDTOList, int limite){
 		int limit = limite;
 
 		int b = (deudaDTOList.size() / limit) + 1;
