@@ -12,7 +12,7 @@ public class UtilsExcel {
 
     public static String formatDateParam = "dd/MM/yyyy";
 
-     static String getDatoString(Cell cell){
+    public  static String getDatoString(Cell cell){
 
         return getDatoString(cell, formatDateParam, null);
      }

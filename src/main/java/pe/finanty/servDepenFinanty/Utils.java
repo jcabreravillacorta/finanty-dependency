@@ -23,8 +23,6 @@ import java.util.function.Predicate;
 @Slf4j
 public class Utils {
 
-	public String TMP_DIR = OSValidator.isWindows() ? "c:\\tmp\\" : "/tmp/";
-
 	public static List getListNotNull(List list) {
 		if (list == null) {
 			return new ArrayList();
