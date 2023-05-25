@@ -4,9 +4,10 @@ import lombok.Data;
 
 @Data
 public class JsonResponse {
-	Boolean success;
-	Object data;
-	String message;
+
+	private Boolean success;
+	private Object data;
+	private String message;
 
 	public boolean isSuccess() {
 		if (success == null){
