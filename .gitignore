@@ -9,3 +9,4 @@ nohup.out
 *.iws
 *.iml
 *.ipr
+.idea/jpa-buddy.xml
