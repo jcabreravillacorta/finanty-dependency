@@ -1,10 +1,8 @@
 package pe.finanty.servDepenFinanty;
 
 import lombok.extern.slf4j.Slf4j;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.ss.usermodel.DataFormatter;
-import org.apache.poi.ss.usermodel.DateUtil;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.util.CellReference;
 
 import java.text.SimpleDateFormat;
 @Slf4j
@@ -29,10 +27,8 @@ public class UtilsExcel {
         if (CellType.NUMERIC == cell.getCellType()) {
 
             if (DateUtil.isCellDateFormatted(cell)) {
-                String pattern = formatDate;
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-                String value = simpleDateFormat.format(cell.getDateCellValue());
-                return value;
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat(formatDate);
+                return simpleDateFormat.format(cell.getDateCellValue());
             } else {
                 String value = formatter.formatCellValue(cell);
                 if (Utils.esNumerico(value)) {
@@ -50,5 +46,10 @@ public class UtilsExcel {
         }
 
         return formatter.formatCellValue(cell);
+    }
+
+    public static CellReference getNameCelda(Row row, Cell cell){
+
+        return new CellReference(row.getRowNum(), cell.getColumnIndex());
     }
 }
