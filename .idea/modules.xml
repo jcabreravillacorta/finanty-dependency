@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../FinantyUltimate/finanty-ultimate.iml" filepath="$PROJECT_DIR$/../FinantyUltimate/finanty-ultimate.iml" />
       <module fileurl="file://$PROJECT_DIR$/proyectos/proyectos.iml" filepath="$PROJECT_DIR$/proyectos/proyectos.iml" />
     </modules>
   </component>

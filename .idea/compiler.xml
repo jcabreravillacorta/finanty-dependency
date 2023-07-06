@@ -7,8 +7,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="finanty-dependency" />
         <module name="finanty-ultimate" />
-        <module name="serv-depen-finanty" />
         <module name="integrador" />
       </profile>
     </annotationProcessing>
