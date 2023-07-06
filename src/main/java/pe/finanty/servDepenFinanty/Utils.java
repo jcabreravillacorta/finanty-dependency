@@ -73,7 +73,6 @@ public class Utils {
 		return map;
 	}
 
-
 	public static Map convertListToMap(String attrKey, String attrValue, List items) {
 		Map map = new LinkedHashMap();
 		items.forEach((item) -> {
@@ -85,8 +84,6 @@ public class Utils {
 		});
 		return map;
 	}
-
-
 	public static Map convertListToMapList(String attr, List items) {
 		Map map = new LinkedHashMap();
 		items.forEach((item) -> {
@@ -228,6 +225,28 @@ public class Utils {
 			e.printStackTrace();
 		}
 		return requestFactory;
+	}
+
+	public static Long getLongNotNull(Long valor){
+		if (valor == null){
+			return 0L;
+		}
+
+		return valor;
+	}
+
+	public static String reemplazarCaracteresEspeciales(String palabra) {
+		String[] caracteresMalos = {"Ñ","ñ","|","à","á","À","Á","è","é","È","É","ì","í","Ì","Í","ò","ó","Ò","Ó","ù","ú","Ù","Ú","\b","/",":","<","*","?",">","_"};
+		String[] caracteresBuenos = {"N","n","","a","a","A","A","e","e","E","E","i","i","I","I","o","o","O","O","u","u","U","U","","","","","","","",""};
+
+		for (String letraMala : caracteresMalos) {
+			if(palabra.contains(letraMala)){
+				palabra = palabra.replace(letraMala,caracteresBuenos[Arrays.asList(caracteresMalos).indexOf(letraMala)]);
+			}
+		}
+
+		return palabra;
+
 	}
 
 	public static String obtenerExcepcion(Exception e){
