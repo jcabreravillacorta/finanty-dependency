@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>pe.finanty</groupId>
-	<artifactId>serv-depen-finanty</artifactId>
+	<artifactId>finanty-dependency</artifactId>
 	<version>0.0.13</version>
 	<packaging>jar</packaging>
 
