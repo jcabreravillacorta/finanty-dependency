@@ -1,6 +1,8 @@
 package pe.finanty.servDepenFinanty;
 
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.Properties;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -9,13 +11,14 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+@Slf4j
 public class EmailSenderService {
 
-    private final Properties properties = new Properties();
+    private static final Properties properties = new Properties();
 
-    private Session session;
+    private static Session session;
 
-    private void init(String ipHost, Integer port, String sender) {
+    private static void init(String ipHost, Integer port, String sender) {
 
         properties.put("mail.smtp.host", ipHost); //"172.23.2.110"
         properties.put("mail.smtp.ssl.trust", "*");
@@ -27,7 +30,7 @@ public class EmailSenderService {
         session = Session.getDefaultInstance(properties);
     }
 
-    public void sendEmail(String[] to, String content, String subject, String ipHost, Integer port, String sender) {
+    public static void sendEmail(String[] to, String content, String subject, String ipHost, Integer port, String sender) {
         String sb = String.join(",", to);
         init(ipHost, port, sender);
         try {
