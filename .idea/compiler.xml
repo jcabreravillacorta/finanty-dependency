@@ -9,10 +9,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="finanty-dependency" />
         <module name="finanty-ultimate" />
-        <module name="integrador" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="integrador" target="17" />
       <module name="servDepenFinanty" target="1.8" />
     </bytecodeTargetLevel>
   </component>
