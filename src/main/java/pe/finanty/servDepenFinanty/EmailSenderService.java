@@ -20,12 +20,12 @@ public class EmailSenderService {
 
     private static void init(String ipHost, Integer port, String sender) {
 
-        properties.put("mail.smtp.host", ipHost); //"172.23.2.110"
+        properties.put("mail.smtp.host", ipHost);
         properties.put("mail.smtp.ssl.trust", "*");
         properties.put("mail.smtp.starttls.enable", "true");
-        properties.put("mail.smtp.port", port); //25
+        properties.put("mail.smtp.port", port);
         properties.put("mail.smtp.auth", "false");
-        properties.put("mail.smtp.mail.sender", sender); //"reporte01@conecta.com.pe"
+        properties.put("mail.smtp.mail.sender", sender);
 
         session = Session.getDefaultInstance(properties);
     }
