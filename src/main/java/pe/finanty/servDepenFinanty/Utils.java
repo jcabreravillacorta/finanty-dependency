@@ -253,8 +253,8 @@ public class Utils {
 		String[] ss = ExceptionUtils.getRootCauseStackTrace(e);
 		String error = StringUtils.join(ss, ", ");
 		if (error != null && !error.isEmpty()) {
-			if (error.length() > 500) {
-				error = error.substring(0, 500);
+			if (error.length() > 1000) {
+				error = error.substring(0, 1000);
 			}
 		}
 
