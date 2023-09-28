@@ -5,7 +5,7 @@
 
 	<groupId>pe.finanty</groupId>
 	<artifactId>finanty-dependency</artifactId>
-	<version>0.0.18</version>
+	<version>0.0.19</version>
 	<packaging>jar</packaging>
 
 	<properties>
