@@ -5,20 +5,17 @@
 
 	<groupId>pe.finanty</groupId>
 	<artifactId>finanty-dependency</artifactId>
-	<version>0.0.19</version>
+	<version>0.0.20</version>
 	<packaging>jar</packaging>
 
 	<properties>
-		<java.version>17</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+		<jakarta.version>9.0.0</jakarta.version> <!-- Usa la versión que prefieras -->
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency>
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
@@ -46,16 +43,9 @@
 			<version>3.0</version>
 		</dependency>
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.0.1</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-oxm</artifactId>
-			<version>5.3.20</version>
+			<version>6.0.11</version>
 		</dependency>
 
 		<dependency>
