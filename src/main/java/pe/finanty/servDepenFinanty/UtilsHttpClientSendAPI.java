@@ -1,5 +1,6 @@
 package pe.finanty.servDepenFinanty;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
@@ -7,16 +8,12 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-
 import javax.net.ssl.*;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.security.KeyStore;
 import java.security.SecureRandom;
-
+@Slf4j
 public class UtilsHttpClientSendAPI {
 
     public static CloseableHttpResponse sendHttpClientPOST(String url,String data, SSLConnectionSocketFactory ssl) {
