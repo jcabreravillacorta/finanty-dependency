@@ -8,22 +8,25 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.springframework.core.io.ClassPathResource;
+
 import javax.net.ssl.*;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.security.KeyStore;
 import java.security.SecureRandom;
+
 @Slf4j
 public class UtilsHttpClientSendAPI {
 
-    public static CloseableHttpResponse sendHttpClientPOST(String url,String data, SSLConnectionSocketFactory ssl) {
+    public static CloseableHttpResponse sendHttpClientPOST(String url, String data, SSLConnectionSocketFactory ssl) {
 
         CloseableHttpResponse response = null;
         try {
             StringEntity customerEntity = null;
             if (data != null) {
-                customerEntity= new StringEntity(data);}
-            response = sendHttpClientPOST(ssl, customerEntity,url);
+                customerEntity = new StringEntity(data);
+            }
+            response = sendHttpClientPOST(ssl, customerEntity, url);
         } catch (UnsupportedEncodingException e) {
             throw new RuntimeException(e);
         }
@@ -32,7 +35,7 @@ public class UtilsHttpClientSendAPI {
     }
 
     public static SSLConnectionSocketFactory getSSLConnection(String urlP12, String passP12, String urlJks, String passJks) {
-        SSLContext sslContext1= null;
+        SSLContext sslContext1 = null;
         try {
 
             KeyStore clientStore = KeyStore.getInstance("PKCS12");
@@ -72,7 +75,7 @@ public class UtilsHttpClientSendAPI {
     }
 
 
-    private static CloseableHttpResponse sendHttpClientPOST(SSLConnectionSocketFactory ssl,  StringEntity customerEntity, String url) {
+    private static CloseableHttpResponse sendHttpClientPOST(SSLConnectionSocketFactory ssl, StringEntity customerEntity, String url) {
 
         CloseableHttpClient httpClient = null;
         try {
@@ -85,7 +88,7 @@ public class UtilsHttpClientSendAPI {
                 httpPost.setEntity(customerEntity);
             }
             httpClient = HttpClients.custom().setSSLSocketFactory(ssl).build();
-            return  httpClient.execute(httpPost);
+            return httpClient.execute(httpPost);
 
         } catch (Exception e) {
             throw new RuntimeException(e);
