@@ -20,7 +20,9 @@ public class UtilsHttpClientSendAPI {
 
         CloseableHttpResponse response = null;
         try {
-            StringEntity customerEntity = new StringEntity(data);
+            StringEntity customerEntity = null;
+            if (data != null) {
+                customerEntity= new StringEntity(data);}
             response = sendHttpClientPOST(ssl, customerEntity,url);
         } catch (UnsupportedEncodingException e) {
             throw new RuntimeException(e);
