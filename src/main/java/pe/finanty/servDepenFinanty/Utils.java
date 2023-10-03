@@ -217,7 +217,7 @@ public class Utils {
 
             CloseableHttpClient httpClient = HttpClients.custom().setSSLSocketFactory(csf).build();
 
-            requestFactory.setHttpClient(httpClient);
+      //      requestFactory.setHttpClient(httpClient);
 
             restTemplate.setRequestFactory(requestFactory);
         } catch (Exception e) {
