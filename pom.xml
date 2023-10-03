@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>pe.finanty</groupId>
     <artifactId>finanty-dependency</artifactId>
-    <version>0.0.20</version>
+    <version>0.0.21</version>
     <name>finanty-dependency</name>
     <description>finanty-dependency</description>
 
